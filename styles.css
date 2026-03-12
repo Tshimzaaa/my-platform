@@ -1,0 +1,274 @@
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --surface-soft: #f8faff;
+  --text: #182033;
+  --muted: #5d6785;
+  --line: #dbe2f0;
+  --primary: #3f6ef8;
+  --primary-strong: #2f57cf;
+  --success: #1ea971;
+  --warning: #f5a524;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(25, 40, 73, 0.08);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #f9fbff 0%, var(--bg) 45%);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+ul { margin: 0; padding-left: 1rem; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand h1 { font-size: 1.15rem; font-weight: 700; }
+.brand p { margin-top: 2px; color: var(--muted); font-size: 0.9rem; }
+.brand-badge {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(130deg, var(--primary), #7f9cff);
+  color: #fff;
+  font-weight: 700;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+}
+
+.sidebar,
+.content-card,
+.panel,
+.panel-card,
+.kpi-card,
+.roadmap-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.sidebar {
+  align-self: start;
+  position: sticky;
+  top: 78px;
+  display: grid;
+  gap: 12px;
+}
+.panel { padding: 14px; display: grid; gap: 12px; }
+.panel h2, .panel h3 { font-size: 1rem; }
+
+.switcher { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.btn {
+  border: 1px solid transparent;
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { border-color: #bfd0ff; }
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--primary-strong); }
+.btn-ghost { border-color: var(--line); background: #fff; }
+.btn-switch.active,
+.btn-tab.active,
+.module-btn.active {
+  background: #eaf0ff;
+  border-color: #b8c9ff;
+  color: #284ab2;
+}
+
+.progress-wrap { display: grid; gap: 8px; }
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.progress {
+  height: 10px;
+  background: #edf1fa;
+  border-radius: 999px;
+  overflow: hidden;
+}
+#progressBar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #5db3ff);
+}
+
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 7px;
+}
+.module-btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  text-align: left;
+  gap: 8px;
+  align-items: center;
+}
+.module-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.workspace { display: grid; gap: 12px; min-width: 0; }
+.view-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.content-card {
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.hero p { color: var(--muted); margin-top: 4px; }
+.badge {
+  background: #eaf7f1;
+  color: var(--success);
+  border: 1px solid #bde7d2;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.kpi-card { padding: 12px; }
+.kpi-card h3 { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+.kpi-card p { margin-top: 6px; font-size: 1.05rem; font-weight: 700; }
+
+.grid-2 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.grid-3 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.panel-card { padding: 14px; display: grid; gap: 10px; }
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.checklist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.checklist label { display: flex; align-items: center; gap: 8px; }
+.checklist small { color: var(--muted); }
+
+.achievements li { margin-bottom: 6px; }
+.lesson-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.roadmap {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.roadmap-item { padding: 12px; display: grid; gap: 8px; }
+.roadmap-item span {
+  justify-self: start;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.roadmap-item.completed { border-color: #b8e8d3; background: #f2fbf7; }
+.roadmap-item.completed span { background: #d8f3e7; color: #157650; }
+.roadmap-item.current span { background: #e6eeff; color: #2d50bf; }
+.roadmap-item.locked { opacity: 0.75; }
+.roadmap-item.locked span { background: #f0f3fa; color: #63708f; }
+
+.lab-layout {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.code-box {
+  width: 100%;
+  min-height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: #101526;
+  color: #dbe6ff;
+}
+.viz-placeholder {
+  min-height: 90px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #b8c5e0;
+  border-radius: 10px;
+  color: var(--muted);
+  background: var(--surface-soft);
+}
+
+@media (max-width: 1080px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
+
+@media (max-width: 680px) {
+  .topbar { padding: 12px 14px; }
+  .brand p { display: none; }
+  .app-shell { padding: 12px; }
+  .content-card { padding: 14px; }
+}

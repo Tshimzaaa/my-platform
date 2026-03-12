@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Academy OS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-badge">DA</span>
+        <div>
+          <h1>Data Academy OS</h1>
+          <p>Structured pathways for Data Analytics and Data Science</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="resetBtn" class="btn btn-ghost">Reset Progress</button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Program</h2>
+          <div class="switcher" role="tablist" aria-label="Select program">
+            <button id="analyticsBtn" class="btn btn-switch active" role="tab" aria-selected="true">Data Analytics</button>
+            <button id="scienceBtn" class="btn btn-switch" role="tab" aria-selected="false">Data Science</button>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-head">
+              <span>Program Progress</span>
+              <strong id="progressText">0%</strong>
+            </div>
+            <div class="progress"><div id="progressBar"></div></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Modules</h3>
+          <ul id="moduleList" class="module-list"></ul>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <nav class="view-nav">
+          <button class="btn btn-tab active" data-view="dashboard">Dashboard</button>
+          <button class="btn btn-tab" data-view="roadmap">Roadmap</button>
+          <button class="btn btn-tab" data-view="lesson">Lesson</button>
+          <button class="btn btn-tab" data-view="lab">Data Lab</button>
+          <button class="btn btn-tab" data-view="projects">Projects</button>
+        </nav>
+
+        <article id="viewContent" class="content-card"></article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
